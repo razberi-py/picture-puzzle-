@@ -7,7 +7,7 @@ Built using pure HTML, CSS, and JavaScript. No frameworks. No backend.
 ---
 
 ## Screenshots
-![other ss](./forest.png)
+![other ss](./forest.jpg)
 
 This turns into this!
 
