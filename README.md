@@ -6,11 +6,13 @@ Built using pure HTML, CSS, and JavaScript. No frameworks. No backend.
 
 ---
 
-## Screenshot
+## Screenshots
+![other ss](./forest,png)
+
+This turns into this!
 
 ![Project Screenshot](./preview.png)
 
-(Replace this with your own image path.)
 
 ---
 
