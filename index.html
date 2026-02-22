@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picture Puzzle Maker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Picture Puzzle Maker</h1>
+            <p>Upload a picture and turn it into a puzzle!</p>
+        </header>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="imageUpload">Upload Image:</label>
+                <input type="file" id="imageUpload" accept="image/*">
+            </div>
+
+            <div class="control-group">
+                <label for="puzzleShape">Puzzle Shape:</label>
+                <select id="puzzleShape">
+                    <option value="rectangle_horizontal">Rectangle (Horizontal)</option>
+                    <option value="rectangle_vertical">Rectangle (Vertical)</option>
+                    <option value="square">Square</option>
+                    <option value="circle">Circle</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="difficulty">Difficulty (Pieces):</label>
+                <select id="difficulty">
+                    <option value="3">Easy (3x3)</option>
+                    <option value="4" selected>Medium (4x4)</option>
+                    <option value="5">Hard (5x5)</option>
+                    <option value="6">Very Hard (6x6)</option>
+                    <option value="8">Expert (8x8)</option>
+                    <option value="10">Master (10x10)</option>
+                    <option value="12">Grandmaster (12x12)</option>
+                </select>
+            </div>
+
+            <button id="startBtn" disabled>Create Puzzle</button>
+            <button id="resetBtn" class="hidden">Reset</button>
+        </div>
+
+        <div id="gameArea" class="game-area">
+            <div id="puzzleContainer" class="puzzle-container">
+                <p class="placeholder-text">Upload an image to start</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

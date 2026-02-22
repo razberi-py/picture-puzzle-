@@ -1,0 +1,131 @@
+:root {
+    --primary-color: #9b59b6;
+    --secondary-color: #f3e5f5;
+    --border-color: #d2b4de;
+    --text-color: #333;
+    --bg-color: #fff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: var(--bg-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 95vw; /* Wider container */
+    width: 100%;
+    text-align: center;
+}
+
+header h1 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fdf8ff;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+input[type="file"], select, button {
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-weight: bold;
+    align-self: flex-end; /* Align with inputs */
+}
+
+button:hover {
+    background-color: #8e44ad;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+button.hidden {
+    display: none;
+}
+
+.game-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; /* Taller game area */
+    border: 2px dashed var(--border-color);
+    border-radius: 8px;
+    position: relative;
+    overflow: auto; /* Allow scrolling if needed, though we try to fit content */
+    background-color: #fdfaff;
+}
+
+.puzzle-container {
+    position: relative;
+    /* Dimensions will be set by JS */
+}
+
+.placeholder-text {
+    color: #999;
+    font-style: italic;
+}
+
+.puzzle-piece {
+    position: absolute;
+    cursor: grab;
+    transition: transform 0.1s;
+    user-select: none;
+    /* Removed default drop-shadow to prevent cracks/lines when snapped */
+    /* filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); */
+}
+
+.puzzle-piece.dragging {
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+    z-index: 1000 !important;
+}
+
+.puzzle-piece.correct {
+    z-index: 0;
+    cursor: default;
+    filter: none; /* Remove shadow when snapped */
+    pointer-events: none; /* Prevent moving it again */
+}
